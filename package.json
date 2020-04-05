@@ -1,7 +1,7 @@
 {
   "name": "homebridge-messenger",
   "version": "0.0.1",
-  "description": "",
+  "description": "this is my description",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +16,6 @@
     "nodemailer": "^6.4.6",
     "pushover-notifications": "^0.2.4"
   }, 
-  "author": "",
+  "author": "Paul-Olivier Trudeau",
   "license": "MIT"
 }
