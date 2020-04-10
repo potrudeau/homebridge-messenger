@@ -1,5 +1,5 @@
 # homebridge-messenger
-This is a [Homebridge](http://homebridge.io) plugin for Homebridge that allows users to send messages from [HomeKit](https://developer.apple.com/homekit/).
+This is a [Homebridge](http://homebridge.io) plugin that allows users to send messages from [HomeKit](https://developer.apple.com/homekit/).
 
 The plugin supports the following technologies:
 * [Pushover](https://pushover.net/)
