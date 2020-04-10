@@ -7,7 +7,6 @@
 <span align="center">
 
 # homebridge-messenger
-[![Downloads](https://img.shields.io/npm/dt/homebridge-messenger?color=blue)](https://www.npmjs.com/package/homebridge-messenger)
 [![NPM version](https://img.shields.io/npm/v/homebridge-messenger?color=blue)](https://npmjs.com/package/homebridge-messenger)
 [![GitHub issues](https://img.shields.io/github/issues/potrudeau/homebridge-messenger)](https://github.com/potrudeau/homebridge-messenger/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/potrudeau/homebridge-messenger)](https://github.com/potrudeau/homebridge-messenger/pulls)
