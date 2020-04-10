@@ -5,6 +5,8 @@ var EmailMessenger = require('./lib/email.js')
 
 let Service, Characteristic
 
+var aaa = "aa"
+
 module.exports = (homebridge) => {
   Service = homebridge.hap.Service
   Characteristic = homebridge.hap.Characteristic

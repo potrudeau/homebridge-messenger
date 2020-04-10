@@ -1,6 +1,6 @@
 {
   "name": "homebridge-messenger",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta",
   "description": "Send Pushover messages and emails using Homebridge",
   "author": "Paul-Olivier Trudeau (p-o.ca)",
   "license": "MIT",
