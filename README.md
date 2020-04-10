@@ -23,12 +23,14 @@ aaa
 ### Email
 
 ## Coming next
+* Configuration using [homebridge-config-ui-x](https://github.com/oznu/homebridge-config-ui-x)
 * Support for [Pushbullet](https://www.pushbullet.com)
 * Support for [IFTTT](https://ifttt.com)
-* More logging
+* Improved logging
 
 ## Credits
 * [qbit/node-pushover](https://github.com/qbit/node-pushover) - library to send Pushover messages
 * [nodemailer](https://github.com/nodemailer/nodemailer) - library to send SMTP emails
 
 ## License
+The [homebridge-messenger](https://github.com/potrudeau/homebridge-messenger) plugin is released under the [MIT license](LICENSE.md).
