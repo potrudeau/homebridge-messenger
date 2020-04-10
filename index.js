@@ -17,7 +17,6 @@ class HomebridgeMessenger {
     this.config = config
     this.serviceMain = new Service.Switch(this.config.name, 0)
 
-
     this.serviceMain.setCharacteristic(Characteristic.On, true);
     this.isOn = true
 
@@ -32,9 +31,7 @@ class HomebridgeMessenger {
     for (let x = 0; x < this.messages.length; x++) {
       let serviceMessage = new Service.Switch(this.messages[x].name , x+100)
 
-      serviceMessage.getCharacteristic(Characteristic.On)
-      .on('set', function(value, callback) {
-        
+      serviceMessage.getCharacteristic(Characteristic.On) .on('set', function(value, callback) {
         if (value==true) {
           if (this.isOn) {
             var message;
@@ -50,7 +47,7 @@ class HomebridgeMessenger {
                   this.messages[x].text)
                 break;
               case "pushover":
-                message = new PushOverMessenger(this,this.config.services.pushover.user, 
+                message = new PushOverMessenger(this.config.services.pushover.user, 
                   this.config.services.pushover.token,
                   this.messages[x].name,
                   this.messages[x].text,

@@ -2,12 +2,27 @@
   "name": "homebridge-messenger",
   "version": "0.0.1",
   "description": "this is my description",
+  "author": "Paul-Olivier Trudeau (p-o.ca)",
+  "license": "MIT",
   "main": "index.js",
+  "private": false,
+  "homepage": "https://github.com/potrudeau/homebridge-messenger",
+  "bugs": {
+    "url": "https://github.com/potrudeau/homebridge-messenger/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/potrudeau/homebridge-messenger.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "homebridge-plugin"
+    "homebridge-plugin",
+    "homebridge",
+    "pushover",
+    "email",
+    "mail"
   ],
   "engines": {
     "homebridge": ">=0.2.5"
@@ -15,7 +30,5 @@
   "dependencies": {
     "nodemailer": "^6.4.6",
     "pushover-notifications": "^0.2.4"
-  }, 
-  "author": "Paul-Olivier Trudeau",
-  "license": "MIT"
+  }
 }
