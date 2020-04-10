@@ -7,6 +7,7 @@
 # homebridge-messenger
 This is a [Homebridge](http://homebridge.io) plugin which allow users to send messages from [HomeKit](https://developer.apple.com/homekit/).
 
+## Features
 The plugin supports the following technologies:
 * [Pushover](https://pushover.net/)
 * [SMTP email](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
