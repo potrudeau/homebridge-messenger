@@ -18,9 +18,68 @@ sudo npm install -g homebridge-messenger
 ```
 
 ## Configuration
+
+### Homebridge Config UI X
+*Coming soon...*
 ### Pushover
-aaa
+```
+"accessories": [
+      {
+          "accessory": "HomebridgeMessenger",
+          "name": "Messenger",
+          "services": {
+              "pushover": {
+                  "user": "your_user",
+                  "token": "your_token"
+              }
+          },
+          "messages": [
+              {
+                  "type": "pushover",
+                  "name": "Pushover message",
+                  "text": "This is a test",
+                  "sound": "pushover",
+                  "priority": 0
+              },
+              {
+                  "type": "pushover",
+                  "name": "Critical message",
+                  "text": "This is important",
+                  "sound": "magic",
+                  "priority": 2
+              }         
+          ]
+      }
+  ]
+```
 ### Email
+```
+"accessories": [
+    {
+        "accessory": "HomebridgeMessenger",
+        "name": "Messenger",
+        "services": {
+            "email": {
+                "recipient": "you_email@domain.com",
+                "smtpServer": "smtp.domain.com",
+                "smtpPort": 465,
+                "smtpSecure": true,
+                "smtpUsername": "your_username",
+                "smtpPassword": "your_password"
+            }
+        },
+        "messages": [
+            {
+                "type": "email",
+                "name": "Test email",
+                "text": "This is a test"
+            }        
+        ]
+    }
+]
+```
+### Advanced configuration
+An example featuring all services is available [here](https://github.com/oznu/homebridge-config-ui-x).
 
 ## Coming next
 * Configuration using [homebridge-config-ui-x](https://github.com/oznu/homebridge-config-ui-x)
