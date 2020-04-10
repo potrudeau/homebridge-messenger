@@ -33,4 +33,4 @@ aaa
 * [nodemailer](https://github.com/nodemailer/nodemailer) - library to send SMTP emails
 
 ## License
-The [homebridge-messenger](https://github.com/potrudeau/homebridge-messenger) plugin is released under the [MIT license](LICENSE.md).
+The [homebridge-messenger](https://github.com/potrudeau/homebridge-messenger) plugin is released under the [MIT license](LICENSE).
