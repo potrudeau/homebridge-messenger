@@ -1,0 +1,31 @@
+{
+    "bridge": {
+        "name": "Homebridge-Test",
+        "username": "0E:2E:91:F3:98:7A",
+        "port": 51262,
+        "pin": "031-45-154"
+    },
+    "accessories": [
+        {
+            "accessory": "HomebridgeMessenger",
+            "name": "Messenger",
+            "services": {
+                "email": {
+                    "recipient": "you_email@domain.com",
+                    "smtpServer": "smtp.domain.com",
+                    "smtpPort": 465,
+                    "smtpSecure": true,
+                    "smtpUsername": "your_username",
+                    "smtpPassword": "your_password"
+                }
+            },
+            "messages": [
+                {
+                    "type": "email",
+                    "name": "Test email",
+                    "text": "This is a test"
+                }        
+            ]
+        }
+    ]
+}

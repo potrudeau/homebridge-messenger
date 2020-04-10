@@ -1,0 +1,49 @@
+{
+    "bridge": {
+        "name": "Homebridge-Test",
+        "username": "0E:2E:91:F3:98:7A",
+        "port": 51262,
+        "pin": "031-45-154"
+    },
+    "accessories": [
+        {
+            "accessory": "HomebridgeMessenger",
+            "name": "Messenger",
+            "services": {
+                "pushover": {
+                    "user": "[YOUR USER]",
+                    "token": "[YOUR TOKEN]"
+                },
+                "email": {
+                    "recipient": "you_email@domain.com",
+                    "smtpServer": "smtp.domain.com",
+                    "smtpPort": 465,
+                    "smtpSecure": true,
+                    "smtpUsername": "your_username",
+                    "smtpPassword": "your_password"
+                }
+            },
+            "messages": [
+                {
+                    "type": "pushover",
+                    "name": "Pushover message",
+                    "text": "This is a test",
+                    "sound": "pushover",
+                    "priority": 0
+                },
+                {
+                    "type": "pushover",
+                    "name": "Critical message",
+                    "text": "This is important",
+                    "sound": "magic",
+                    "priority": 2
+                },
+                {
+                    "type": "email",
+                    "name": "Test email",
+                    "text": "This is a test"
+                }       
+            ]
+        }
+    ]
+}
