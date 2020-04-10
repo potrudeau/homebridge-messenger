@@ -1,7 +1,7 @@
 {
   "name": "homebridge-messenger",
   "version": "0.0.1",
-  "description": "this is my description",
+  "description": "Send Pushover messages and emails using Homebridge",
   "author": "Paul-Olivier Trudeau (p-o.ca)",
   "license": "MIT",
   "main": "index.js",
@@ -25,6 +25,7 @@
     "mail"
   ],
   "engines": {
+    "node": ">=6.0.0",
     "homebridge": ">=0.2.5"
   },
   "dependencies": {
