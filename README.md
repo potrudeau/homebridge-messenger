@@ -79,7 +79,7 @@ sudo npm install -g homebridge-messenger
 ]
 ```
 ### Advanced configuration
-An example featuring all services is available [here](https://github.com/oznu/homebridge-config-ui-x).
+An example featuring all services is available [here](configuration-examples/advanced.example.json).
 
 ## Coming next
 * Configuration using [homebridge-config-ui-x](https://github.com/oznu/homebridge-config-ui-x)
