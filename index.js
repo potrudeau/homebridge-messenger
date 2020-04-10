@@ -55,7 +55,7 @@ class HomebridgeMessenger {
                   this.messages[x].sound)
                 break;
               default:
-                throw new Error(this.messages[x].name  + " : Invalid type value. Only Email and Pushover are accepted.");
+                throw new Error(this.messages[x].name  + " : Invalid type value. Only Pushover and Email are accepted.");
                 break;
             }
 
