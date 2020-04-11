@@ -5,7 +5,7 @@
 </p>
 
 <span align="center">
-
+    
 # homebridge-messenger
 [![NPM version](https://img.shields.io/npm/v/homebridge-messenger?color=blue)](https://npmjs.com/package/homebridge-messenger)
 [![GitHub issues](https://img.shields.io/github/issues/potrudeau/homebridge-messenger)](https://github.com/potrudeau/homebridge-messenger/issues)
@@ -15,9 +15,6 @@
 [Homebridge](http://homebridge.io) plugin which allow users to send messages from [HomeKit](https://developer.apple.com/homekit/).
 
 </span>
-
-
-
 
 ## Features
 The plugin supports the following technologies:
@@ -37,6 +34,19 @@ sudo npm install -g homebridge-messenger
 ```
 
 ## Configuration
+The plugin adds to HomeKit a main switch and switches for each configured message. 
+
+The accessory **name** is used to specify the name of the main switch. If this main switch if turned OFF, no message will be sent by the plugin.
+
+Message switches are stateful: they are turned OFF after being turned ON, once the message is sent.
+
+There are two levels of configuration:
+* **Service** level properties defines the parameters for a specific technology. All messages related to that technology will be using the same properties for all messages. 
+    * Example: All emails will use the same SMTP configuration. 
+* **Message** level properties contains the configuration of each message. 
+    * Example: Each message can have a different title and text.
+    
+All switches can be used in scenes and automation.
 
 ### Homebridge Config UI X
 *Coming soon...*
@@ -79,7 +89,7 @@ sudo npm install -g homebridge-messenger
     * name *(required)*: Name of the switch and title of your message.
     * text *(required)*: Body of the message.
     * sound *(facultative)*: Name of the sound that will notify the user. If no valid value is provided, the default `pushover` sound will be used. For no sound, use `silent`, the [Pushover API](https://pushover.net/api#sounds) contains the list of other available sounds.
-    * priority *(facultative)*: Priority of the message. Accepted values are `-2`, `-1`, `0`, `1` or `2`. You may refer to the [Pushover API](https://pushover.net/api#priority) for more details. Critical messages (`2`), are send with the following parameters :
+    * priority *(facultative)*: Priority of the message. Accepted values are `-2`, `-1`, `0`, `1` or `2`. You may refer to the [Pushover API](https://pushover.net/api#priority) for more details. Critical messages (`2`), are sent with the following parameters :
         * Retry : 60 seconds
         * Expires: 3600 seconds
     
