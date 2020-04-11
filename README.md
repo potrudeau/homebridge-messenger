@@ -78,8 +78,8 @@ sudo npm install -g homebridge-messenger
     * type *(required)*: Must be `pushover`.
     * name *(required)*: Name of the switch and title of your message.
     * text *(required)*: Body of the message.
-    * sound *(facultative)*: Name of the sound that will notify the user. If no valid value is provided, the default `pushover` sound will be played. The [Pushover API](https://pushover.net/api#sounds) contains the list of possible sounds. For no sound, use `silent`.
-    * priority *(facultative)*: Priority of the message. Accepted values are `-2`, `-1`, `0`, `1` or `2`. You may refer to the [Pushover API](https://pushover.net/api#priority) for more details. For critical messages (`2`), this plugin uses the following parameters :
+    * sound *(facultative)*: Name of the sound that will notify the user. If no valid value is provided, the default `pushover` sound will be used. For no sound, use `silent`, the [Pushover API](https://pushover.net/api#sounds) contains the list of other available sounds.
+    * priority *(facultative)*: Priority of the message. Accepted values are `-2`, `-1`, `0`, `1` or `2`. You may refer to the [Pushover API](https://pushover.net/api#priority) for more details. Critical messages (`2`), are send with the following parameters :
         * Retry : 60 seconds
         * Expires: 3600 seconds
     
@@ -112,8 +112,8 @@ sudo npm install -g homebridge-messenger
 * Service properties : 
     * recipient *(required)*: Email address of the recipient.
     * smtpServer *(required)*: Address of the SMTP host.
-    * smtpPort *(facultative)*: Port to connect to. Default value is `25`).
-    * smtpSecure *(facultative)*: Set to `true` if SMTP supports TLS. (Default value of property is `false`).
+    * smtpPort *(facultative)*: Port to connect to. (Default value is `25`).
+    * smtpSecure *(facultative)*: Set to `true` if SMTP supports TLS. (Default value is `false`).
     * smtpUsername *(facultative)*: Username for the SMTP server, if required.
     * smtpPassword *(facultative)*: Password for the SMTP server, if required.
 * Message properties :
