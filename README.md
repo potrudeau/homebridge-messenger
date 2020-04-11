@@ -126,6 +126,7 @@ An example featuring **all services** is available [here](configuration-examples
 
 ## Coming next
 * Configuration using [homebridge-config-ui-x](https://github.com/oznu/homebridge-config-ui-x)
+* Add plugin cache for status.
 * Support for [Pushbullet](https://www.pushbullet.com)
 * Support for [IFTTT](https://ifttt.com)
 * Improved logging
