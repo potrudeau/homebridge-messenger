@@ -88,7 +88,7 @@ All switches can be used in scenes and automation.
     * type *(required)*: Must be `pushover`.
     * name *(required)*: Name of the switch and title of your message.
     * text *(required)*: Body of the message.
-    * sound *(facultative)*: Name of the sound that will notify the user. If no valid value is provided, the default `pushover` sound will be used. For no sound, use `silent`, the [Pushover API](https://pushover.net/api#sounds) contains the list of other available sounds.
+    * sound *(facultative)*: Name of the sound that will notify the user. If no valid value is provided, the default `pushover` sound will be used. For no sound, use `silent`. The [Pushover API](https://pushover.net/api#sounds) contains the list of all available sounds.
     * priority *(facultative)*: Priority of the message. Accepted values are `-2`, `-1`, `0`, `1` or `2`. You may refer to the [Pushover API](https://pushover.net/api#priority) for more details. Critical messages (`2`), are sent with the following parameters :
         * Retry : 60 seconds
         * Expires: 3600 seconds
