@@ -5,8 +5,6 @@ var EmailMessenger = require('./lib/email.js')
 
 let Service, Characteristic
 
-var aaa = "aa"
-
 module.exports = (homebridge) => {
   Service = homebridge.hap.Service
   Characteristic = homebridge.hap.Characteristic
@@ -17,9 +15,11 @@ class HomebridgeMessenger {
   constructor (log, config) {
     this.log = log
     this.config = config
-    this.serviceMain = new Service.Switch(this.config.name, 0)
 
+    this.serviceMain = new Service.Switch(this.config.name, 0)
+    this.log("Added Main Switch : " + this.config.name);
     this.serviceMain.setCharacteristic(Characteristic.On, true);
+    
     this.isOn = true
 
     this.loadMessages();
@@ -31,7 +31,8 @@ class HomebridgeMessenger {
     this.serviceMessages = [];
 
     for (let x = 0; x < this.messages.length; x++) {
-      let serviceMessage = new Service.Switch(this.messages[x].name , x+100)
+      let serviceMessage = new Service.Switch(this.messages[x].name , x + 100)
+      this.log("Added " + this.messages[x].type.toLowerCase() + " : " + this.messages[x].name);
 
       serviceMessage.getCharacteristic(Characteristic.On) .on('set', function(value, callback) {
         if (value==true) {
@@ -61,7 +62,7 @@ class HomebridgeMessenger {
                 break;
             }
 
-            this.log(this.messages[x].name  + " : Sending message to " + message.getRecipient())
+            this.log(this.messages[x].name  + " : Message sent to " + message.getRecipient())
             message.sendMessage() 
           } else {
             this.log(this.messages[x].name + " : Message not sent. Master switch is off.")

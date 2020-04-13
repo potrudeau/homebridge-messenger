@@ -135,11 +135,12 @@ All switches can be used in scenes and automation.
 An example featuring **all services** is available [here](configuration-examples/advanced.example.json).
 
 ## Coming next
-* Configuration using [homebridge-config-ui-x](https://github.com/oznu/homebridge-config-ui-x)
 * Add plugin cache for status.
 * Support for [Pushbullet](https://www.pushbullet.com)
 * Support for [IFTTT](https://ifttt.com)
-* Improved logging
+
+## Changelog
+See [CHANGELOG.md](CHANGELOG.md)
 
 ## Credits
 * [qbit/node-pushover](https://github.com/qbit/node-pushover) - library to send Pushover messages
