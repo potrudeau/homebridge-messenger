@@ -49,7 +49,12 @@ There are two levels of configuration:
 All switches can be used in scenes and automation.
 
 ### Homebridge Config UI X
-*Coming soon...*
+[Homebridge Config UI X](https://github.com/oznu/homebridge-config-ui-x) is the easiest way to configure this plugin :
+* Every option of the plugin is available through the UI
+* Configuration validation
+<img width="500" src="https://user-images.githubusercontent.com/1062160/79172222-181e7c80-7dc2-11ea-9b5b-053f5709c525.png">
+
+
 ### Pushover
 ```
 "accessories": [
@@ -139,8 +144,8 @@ An example featuring **all services** is available [here](configuration-examples
 * Support for [Pushbullet](https://www.pushbullet.com)
 * Support for [IFTTT](https://ifttt.com)
 
-## Changelog
-See [CHANGELOG.md](CHANGELOG.md)
+## Change log
+Available [here](CHANGELOG.md)
 
 ## Credits
 * [qbit/node-pushover](https://github.com/qbit/node-pushover) - library to send Pushover messages
