@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "nodemailer": "^6.4.6",
-    "pushover-notifications": "^0.2.4"
+    "pushover-notifications": "^0.2.4",
+    "node-persist": "^2.1.0"
   }
 }
