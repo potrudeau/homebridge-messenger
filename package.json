@@ -1,6 +1,6 @@
 {
   "name": "homebridge-messenger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Send Pushover messages and emails from Homekit",
   "author": "Paul-Olivier Trudeau (p-o.ca)",
   "license": "MIT",
