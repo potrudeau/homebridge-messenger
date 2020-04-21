@@ -140,7 +140,6 @@ All switches can be used in scenes and automation.
 An example featuring **all services** is available [here](configuration-examples/advanced.example.json).
 
 ## Coming next
-* Add plugin cache for status.
 * Support for [Pushbullet](https://www.pushbullet.com)
 * Support for [IFTTT](https://ifttt.com)
 
