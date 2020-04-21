@@ -5,7 +5,7 @@
 </p>
 
 # homebridge-messenger
-<p align="center">
+<span align="center">
 
 [![NPM version](https://img.shields.io/npm/v/homebridge-messenger?color=blue)](https://npmjs.com/package/homebridge-messenger)
 [![GitHub issues](https://img.shields.io/github/issues/potrudeau/homebridge-messenger)](https://github.com/potrudeau/homebridge-messenger/issues)
@@ -14,7 +14,7 @@
 
 [Homebridge](http://homebridge.io) plugin which allow users to send messages from [HomeKit](https://developer.apple.com/homekit/).
 
-</p>
+</span>
 
 
 
