@@ -111,6 +111,12 @@
                     "default": "",
                     "required": true
                   },
+                  "device": {
+                    "title": "Device",
+                    "type": "string",
+                    "default": "",
+                    "required": false
+                  },
                   "priority": {
                     "title": "Priority",
                     "type": "integer",
@@ -427,6 +433,10 @@
                         },
                         {
                             "key": "messages[].sound",
+                            "flex-basis": "50%"
+                        },
+                        {
+                            "key": "messages[].device",
                             "flex-basis": "50%"
                         }
                     ]

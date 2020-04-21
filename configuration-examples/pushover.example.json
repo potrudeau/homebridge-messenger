@@ -21,6 +21,7 @@
                     "name": "Pushover message",
                     "text": "This is a test",
                     "sound": "pushover",
+                    "device": "iphone",
                     "priority": 0
                 },
                 {

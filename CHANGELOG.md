@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## NEXT
+
+### Features
+
+* **Pushover messages :** Added [Device](https://pushover.net/api#identifiers) property.
+
 ## 0.0.3 (2020-04-19)
 
 ### Features
@@ -12,7 +18,7 @@ All notable changes to this project will be documented in this file. This projec
 
 ### Features
 
-* **Support for Homebridge Config UI X :** Homebridge-messenger is now compatible with [Plugin Settings GUI.](https://github.com/oznu/homebridge-config-ui-x/wiki/Developers:-Plugin-Settings-GUI).
+* **Support for Homebridge Config UI X :** Homebridge-messenger is now compatible with [Plugin Settings GUI](https://github.com/oznu/homebridge-config-ui-x/wiki/Developers:-Plugin-Settings-GUI).
 * **Email messages :** Added default value for SMTP port (25).
 * **Logging :** Added more logging when loading plugin.
 

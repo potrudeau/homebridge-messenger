@@ -79,6 +79,7 @@ class HomebridgeMessenger {
                   this.messages[x].name,
                   this.messages[x].text,
                   this.messages[x].priority,
+                  this.messages[x].device,
                   this.messages[x].sound)
                 break;
               // Invalid message type

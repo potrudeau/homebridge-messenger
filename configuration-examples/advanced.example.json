@@ -36,6 +36,7 @@
                     "name": "Critical message",
                     "text": "This is important",
                     "sound": "magic",
+                    "device": "iphone",
                     "priority": 2
                 },
                 {
