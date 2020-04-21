@@ -4,16 +4,19 @@
     <img src="https://user-images.githubusercontent.com/1062160/79012203-c06ae180-7b33-11ea-81c3-ab43290011db.png" hspace="10px">    
 </p>
 
-<span align="center">
-    
 # homebridge-messenger
+<p align="center">
+
 [![NPM version](https://img.shields.io/npm/v/homebridge-messenger?color=blue)](https://npmjs.com/package/homebridge-messenger)
 [![GitHub issues](https://img.shields.io/github/issues/potrudeau/homebridge-messenger)](https://github.com/potrudeau/homebridge-messenger/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/potrudeau/homebridge-messenger)](https://github.com/potrudeau/homebridge-messenger/pulls)
 [![Licence](https://img.shields.io/npm/l/homebridge-messenger?color=red)](LICENSE)
 
 [Homebridge](http://homebridge.io) plugin which allow users to send messages from [HomeKit](https://developer.apple.com/homekit/).
-</span>
+
+</p>
+
+
 
 ## Features
 The plugin supports the following technologies:
