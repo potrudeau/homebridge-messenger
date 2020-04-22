@@ -137,7 +137,7 @@ All switches can be used in scenes and automation.
     * text *(required)*: Body of the email.
     
 ### Advanced configuration
-An example featuring **all services** is available [here](configuration-examples/advanced.example.json).
+An example featuring **all technologies** is available [here](configuration-examples/advanced.example.json).
 
 ## Coming next
 * Support for [Pushbullet](https://www.pushbullet.com)
