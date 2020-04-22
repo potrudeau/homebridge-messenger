@@ -6,11 +6,11 @@
 
 
 # homebridge-messenger
-[![NPM downloads](https://img.shields.io/npm/dt/homebridge-messenger?color=blue)](https://npmjs.com/package/homebridge-messenger)
-[![NPM version](https://img.shields.io/npm/v/homebridge-messenger?color=blue)](https://npmjs.com/package/homebridge-messenger)
-[![GitHub issues](https://img.shields.io/github/issues/potrudeau/homebridge-messenger)](https://github.com/potrudeau/homebridge-messenger/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/potrudeau/homebridge-messenger)](https://github.com/potrudeau/homebridge-messenger/pulls)
-[![Licence](https://img.shields.io/npm/l/homebridge-messenger?color=red)](LICENSE)
+[![NPM downloads](https://flat.badgen.net/npm/dt/homebridge-messenger?color=blue)](https://npmjs.com/package/homebridge-messenger)
+[![NPM version](https://flat.badgen.net/npm/v/homebridge-messenger?color=blue)](https://npmjs.com/package/homebridge-messenger)
+[![GitHub issues](https://flat.badgen.net/github/open-issues/potrudeau/homebridge-messenger?label=issues&color=green)](https://github.com/potrudeau/homebridge-messenger/issues)
+[![GitHub pull requests](https://flat.badgen.net/github/prs/potrudeau/homebridge-messenger?label=pull%20requests&color=green)](https://github.com/potrudeau/homebridge-messenger/pulls)
+[![Licence](https://flat.badgen.net/npm/license/homebridge-messenger?color=red)](LICENSE)
 
 [Homebridge](http://homebridge.io) plugin which allow users to send messages from [HomeKit](https://developer.apple.com/homekit/).
 
