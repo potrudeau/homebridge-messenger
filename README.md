@@ -141,8 +141,8 @@ All switches can be used in scenes and automation.
 An example featuring **all technologies** is available [here](configuration-examples/advanced.example.json).
 
 ## Coming next
-* HTML and Url properties for Pushover.
-* Support for [IFTTT](https://ifttt.com)
+* HTML and Url properties for Pushover. ([#2](https://github.com/potrudeau/homebridge-messenger/issues/2))
+* Support for [IFTTT](https://ifttt.com) ([#1](https://github.com/potrudeau/homebridge-messenger/issues/1))
 * Support for [Pushbullet](https://www.pushbullet.com)
 
 ## Change Log
