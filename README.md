@@ -141,7 +141,7 @@ All switches can be used in scenes and automation.
 An example featuring **all technologies** is available [here](configuration-examples/advanced.example.json).
 
 ## Coming next
-* Add HTML and Url properties for Pushover.
+* HTML and Url properties for Pushover.
 * Support for [IFTTT](https://ifttt.com)
 * Support for [Pushbullet](https://www.pushbullet.com)
 
