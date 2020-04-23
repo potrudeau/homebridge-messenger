@@ -11,6 +11,7 @@
 [![GitHub issues](https://flat.badgen.net/github/open-issues/potrudeau/homebridge-messenger?label=issues&color=green)](https://github.com/potrudeau/homebridge-messenger/issues)
 [![GitHub pull requests](https://flat.badgen.net/github/prs/potrudeau/homebridge-messenger?label=pull%20requests&color=green)](https://github.com/potrudeau/homebridge-messenger/pulls)
 [![Licence](https://flat.badgen.net/npm/license/homebridge-messenger?color=red)](LICENSE)
+[![verified-by-homebridge](https://flat.badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
 
 [Homebridge](http://homebridge.io) plugin which allow users to send messages from [HomeKit](https://developer.apple.com/homekit/).
 
