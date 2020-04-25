@@ -33,6 +33,17 @@
                         }
                     }
                 },
+                "ifttt": {
+                  "title": "Pushover",
+                  "type": "object",
+                  "properties": {
+                      "key": {
+                          "title": "Key",
+                          "type": "string",
+                          "required": true
+                      }
+                  }
+                },
                 "email": {
                     "title": "Email",
                     "type": "object",
@@ -102,11 +113,41 @@
                       "enum": [
                         "email"
                       ]
-                    }
+                    },
+                    {
+                      "title": "IFTTT",
+                      "enum": [
+                        "ifttt"
+                      ]
+                    }  
                   ]
                 },
                 "text": {
                     "title": "Text",
+                    "type": "string",
+                    "default": "",
+                    "required": true
+                  },
+                  "event": {
+                    "title": "Event",
+                    "type": "string",
+                    "default": "",
+                    "required": true
+                  },
+                  "value1": {
+                    "title": "Value 1",
+                    "type": "string",
+                    "default": "",
+                    "required": true
+                  },
+                  "value2": {
+                    "title": "Value 2",
+                    "type": "string",
+                    "default": "",
+                    "required": true
+                  },
+                  "value3": {
+                    "title": "Value 3",
                     "type": "string",
                     "default": "",
                     "required": true
@@ -298,8 +339,20 @@
                             ]
                           }
                       ]
-                  }
-                  
+                  },
+                  "url": {
+                    "title": "Url",
+                    "type": "string",
+                    "default": "",
+                    "required": false,
+                    "format": "hostname"
+                  },
+                  "urltitle": {
+                    "title": "Url Title",
+                    "type": "string",
+                    "default": "",
+                    "required": false
+                  }              
               }
             }
         }  
@@ -351,6 +404,26 @@
                     ]
                 }
             ]
+        },
+        {
+          "type": "fieldset",
+          "expandable": true,
+          "title": "IFTTT Settings",
+          "items": [
+              {
+                  "type": "div",
+                  "notitle": true,
+                  "displayFlex": true,
+                  "flex-direction": "row",
+                  "flex-wrap": "wrap",
+                  "items": [
+                      {
+                          "key": "services.ifttt.key",
+                          "flex-basis": "50%"
+                      }
+                  ]
+              }
+          ]
         },
         {
             "type": "fieldset",
@@ -437,7 +510,36 @@
                         },
                         {
                             "key": "messages[].device",
-                            "flex-basis": "50%"
+                            "flex-basis": "100%"
+                        },
+                        {
+                          "key": "messages[].url",
+                          "flex-basis": "50%"
+                        },
+                        {
+                          "key": "messages[].urltitle",
+                          "flex-basis": "50%"
+                        },
+                        {
+                          "type": "help",
+                          "helpvalue": "<b>IFTTT settings</b><br><em class='primary-text'>These settings only relate to IFTTT messages.</em>",
+                          "flex-basis": "100%"
+                        },
+                        {
+                          "key": "messages[].event",
+                          "flex-basis": "100%"
+                        },
+                        {
+                          "key": "messages[].value1",
+                          "flex-basis": "33%%"
+                        },
+                        {
+                          "key": "messages[].value2",
+                          "flex-basis": "33%"
+                        },
+                        {
+                          "key": "messages[].value3",
+                          "flex-basis": "33%"
                         }
                     ]
                 }

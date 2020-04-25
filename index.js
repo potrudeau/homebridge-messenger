@@ -2,6 +2,7 @@
 
 var PushOverMessenger = require('./lib/pushover.js')
 var EmailMessenger = require('./lib/email.js')
+var IftttMessenger = require('./lib/ifttt.js')
 
 let Service, Characteristic, HomebridgeAPI
 
@@ -80,8 +81,18 @@ class HomebridgeMessenger {
                   this.messages[x].text,
                   this.messages[x].priority,
                   this.messages[x].device,
-                  this.messages[x].sound)
+                  this.messages[x].sound,
+                  this.messages[x].url,
+                  this.messages[x].urltitle)
                 break;
+              // Message type is pushover
+              case "ifttt":
+                message = new IftttMessenger(this.config.services.ifttt.key,
+                  this.messages[x].event,
+                  this.messages[x].value1,
+                  this.messages[x].value2,
+                  this.messages[x].value3)
+                break;                
               // Invalid message type
               default:
                 throw new Error(this.messages[x].name  + " : Invalid type value. Only Pushover and Email are accepted.");

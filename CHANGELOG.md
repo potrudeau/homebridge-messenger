@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.0.5 (2020-04-21)
+
+### Features
+
+* **IFTTT messages :** Added support for [IFTTT Webhooks](https://ifttt.com/maker_webhooks). ([#1](https://github.com/potrudeau/homebridge-messenger/issues/1))
+* **Pushover messages :** Added Url and Url Title properties for Pushover messages. Also, Pushover messages now supports HTML code, as permitted by the Pushover [API](https://pushover.net/api). ([#3](https://github.com/potrudeau/homebridge-messenger/issues/3))
+
+### Bug fixes
+* Remove all spaces from "device" property of Pushover messages. The spaces were not allowing message to be sent to multiple devices. ([#4](https://github.com/potrudeau/homebridge-messenger/issues/4))
+
 ## 0.0.4 (2020-04-21)
 
 ### Features

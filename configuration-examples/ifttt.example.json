@@ -1,0 +1,29 @@
+{
+    "bridge": {
+        "name": "Homebridge-Test",
+        "username": "0E:2E:91:F3:98:7A",
+        "port": 51262,
+        "pin": "031-45-154"
+    },
+    "accessories": [
+        {
+            "accessory": "HomebridgeMessenger",
+            "name": "Messenger",
+            "services": {
+                "ifttt": {
+                    "key": "your_key"
+                }
+            },
+            "messages": [
+                {
+                    "type": "ifttt",
+                    "name": "Test ifttt",
+                    "event": "TEST",
+                    "value1": "hello world",
+                    "value2": "foobar",
+                    "value3": "chewbacca"
+                }        
+            ]
+        }
+    ]
+}

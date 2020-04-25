@@ -1,6 +1,6 @@
 {
   "name": "homebridge-messenger",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Send Pushover messages and emails from Homekit",
   "author": "Paul-Olivier Trudeau (p-o.ca)",
   "license": "MIT",
@@ -22,7 +22,10 @@
     "homebridge",
     "pushover",
     "email",
-    "mail"
+    "mail",
+    "ifttt",
+    "maker",
+    "webhooks"
   ],
   "engines": {
     "node": ">=6.0.0",
@@ -31,6 +34,7 @@
   "dependencies": {
     "nodemailer": "^6.4.6",
     "pushover-notifications": "^0.2.4",
-    "node-persist": "^2.1.0"
+    "node-persist": "^2.1.0",
+    "ifttt-webhooks-channel": "^1.1.2"
   }
 }

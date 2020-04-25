@@ -1,7 +1,8 @@
 <p align="center">
     <img src="https://user-images.githubusercontent.com/1062160/79011991-45a1c680-7b33-11ea-9e34-ec5e9005f623.png" height="120"><br>
     <img src="https://user-images.githubusercontent.com/1062160/79012099-7da90980-7b33-11ea-99a3-c69c322e875e.png" hspace="10px">
-    <img src="https://user-images.githubusercontent.com/1062160/79012203-c06ae180-7b33-11ea-81c3-ab43290011db.png" hspace="10px">    
+    <img src="https://user-images.githubusercontent.com/1062160/79012203-c06ae180-7b33-11ea-81c3-ab43290011db.png" hspace="10px">  
+    <img src="https://user-images.githubusercontent.com/1062160/80269083-a9230c80-867a-11ea-9bee-74dd68aa1bd0.png" hspace="10px">  
 </p>
 
 
@@ -20,6 +21,7 @@
 The plugin supports the following technologies:
 * [Pushover](https://pushover.net/)
 * [SMTP email](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
+* [IFTTT](https://ifttt.com) ([Webhooks](https://ifttt.com/maker_webhooks) service)
 
 ## Installation
 
@@ -136,13 +138,47 @@ All switches can be used in scenes and automation.
     * type *(required)*: Must be `email`.
     * name *(required)*: Name of the switch and subject of your email.
     * text *(required)*: Body of the email.
+
+
+### IFTTT (Webhooks service)
+```
+"accessories": [
+    {
+        "accessory": "HomebridgeMessenger",
+        "name": "Messenger",
+        "services": {
+            "ifttt": {
+                "key": "your_key"
+            },
+        },
+        "messages": [
+            {
+                "name": "Test IFTTT",
+                "type": "ifttt",
+                "event": "TEST",
+                "value1": "Hello world",
+                "value2": "foo bar",
+                "value3": "chewbacca"
+            }        
+        ]
+    }
+]
+```
+* Service properties : 
+    * key *(required)*: Your key. To obtain your key, log into your IFTTT account and click on the Documentation link in the [Webhook service](https://ifttt.com/maker_webhooks).
+* Message properties :
+    * type *(required)*: Must be `ifttt`.
+    * name *(required)*: Name of the switch. This will be *not* passed to IFTTT.
+    * event *(required)*: Name of your event configured in IFTTT (Webhooks service).
+    * value1 *(facultative)*: Value 1 to be passed to IFTTT.
+    * value2 *(facultative)*: Value 2 to be passed to IFTTT.
+    * value3 *(facultative)*: Value 3 to be passed to IFTTT.
     
 ### Advanced configuration
 An example featuring **all technologies** is available [here](configuration-examples/advanced.example.json).
 
 ## Coming next
-* HTML and Url properties for Pushover. ([#2](https://github.com/potrudeau/homebridge-messenger/issues/2))
-* Support for [IFTTT](https://ifttt.com) ([#1](https://github.com/potrudeau/homebridge-messenger/issues/1))
+* Support for [Pushcut](https://www.pushcut.io/) ([#5](https://github.com/potrudeau/homebridge-messenger/issues/5))
 * Support for [Pushbullet](https://www.pushbullet.com)
 
 ## Change Log
