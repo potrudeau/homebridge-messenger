@@ -1,7 +1,7 @@
 {
   "name": "homebridge-messenger",
   "version": "0.0.5",
-  "description": "Send Pushover messages and emails from Homekit",
+  "description": "Send HomeKit messages with HomeBridge (Pushover / IFTTT / Email)",
   "author": "Paul-Olivier Trudeau (p-o.ca)",
   "license": "MIT",
   "main": "index.js",
