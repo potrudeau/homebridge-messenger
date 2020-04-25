@@ -165,10 +165,10 @@ All switches can be used in scenes and automation.
 ]
 ```
 * Service properties : 
-    * key *(required)*: Your key. To obtain your key, log into your IFTTT account and click on the Documentation link in the [Webhook service](https://ifttt.com/maker_webhooks).
+    * key *(required)*: Your key. To obtain your key, log into your IFTTT account and click on the Documentation link in the [Webhooks service](https://ifttt.com/maker_webhooks).
 * Message properties :
     * type *(required)*: Must be `ifttt`.
-    * name *(required)*: Name of the switch. This will be *not* passed to IFTTT.
+    * name *(required)*: Name of the switch. This will be **not** passed to IFTTT.
     * event *(required)*: Name of your event configured in IFTTT (Webhooks service).
     * value1 *(facultative)*: Value 1 to be passed to IFTTT.
     * value2 *(facultative)*: Value 2 to be passed to IFTTT.
@@ -187,6 +187,7 @@ Available [here](CHANGELOG.md)
 ## Credits
 * [qbit/node-pushover](https://github.com/qbit/node-pushover) - library to send Pushover messages
 * [nodemailer](https://github.com/nodemailer/nodemailer) - library to send SMTP emails
+* [jeroentvb/IFTTT-webhooks-channel](https://github.com/jeroentvb/IFTTT-webhooks-channel) - library to send IFTTT messages
 
 ## License
 The [homebridge-messenger](https://github.com/potrudeau/homebridge-messenger) plugin is released under the [MIT license](LICENSE).
