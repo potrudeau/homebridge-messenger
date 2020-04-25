@@ -54,7 +54,7 @@ All switches can be used in scenes and automation.
 [Homebridge Config UI X](https://github.com/oznu/homebridge-config-ui-x) is the easiest way to configure this plugin :
 * Every option is available through the UI
 * Configuration validation
-<img width="500" src="https://user-images.githubusercontent.com/1062160/79172222-181e7c80-7dc2-11ea-9b5b-053f5709c525.png">
+<img width="500" src="https://user-images.githubusercontent.com/1062160/80269563-e1c4e500-867e-11ea-86d7-eefdd5e31b90.png">
 
 ### Pushover
 ```
