@@ -153,10 +153,10 @@ All switches can be used in scenes and automation.
         },
         "messages": [
             {
-                "name": "Test IFTTT",
                 "type": "ifttt",
-                "event": "TEST",
-                "value1": "Hello world",
+                "name": "Test IFTTT",
+                "event": "my_webhook",
+                "value1": "hello world",
                 "value2": "foo bar",
                 "value3": "chewbacca"
             }        

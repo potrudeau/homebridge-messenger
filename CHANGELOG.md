@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.0.6 (2020-04-26)
+
+### Bug fixes
+* Bug fixe when Pushover device is not provided. ([#6](https://github.com/potrudeau/homebridge-messenger/issues/6))
+
 ## 0.0.5 (2020-04-24)
 
 ### Features

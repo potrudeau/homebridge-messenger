@@ -17,8 +17,8 @@
             "messages": [
                 {
                     "type": "ifttt",
-                    "name": "Test ifttt",
-                    "event": "TEST",
+                    "name": "Test IFTTT",
+                    "event": "my_webhook",
                     "value1": "hello world",
                     "value2": "foobar",
                     "value3": "chewbacca"
