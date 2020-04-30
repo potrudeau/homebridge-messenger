@@ -188,8 +188,8 @@ Available [here](CHANGELOG.md)
 
 ## Credits
 * [qbit/node-pushover](https://github.com/qbit/node-pushover) - library to send Pushover messages
-* [nodemailer](https://github.com/nodemailer/nodemailer) - library to send SMTP emails
 * [jeroentvb/IFTTT-webhooks-channel](https://github.com/jeroentvb/IFTTT-webhooks-channel) - library to send IFTTT messages
+* [nodemailer](https://github.com/nodemailer/nodemailer) - library to send SMTP emails
 
 ## License
 The [homebridge-messenger](https://github.com/potrudeau/homebridge-messenger) plugin is released under the [MIT license](LICENSE).
