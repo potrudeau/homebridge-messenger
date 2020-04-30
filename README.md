@@ -102,6 +102,40 @@ All switches can be used in scenes and automation.
         * Retry : 60 seconds
         * Expires: 3600 seconds
     
+### IFTTT (Webhooks service)
+```
+"accessories": [
+    {
+        "accessory": "HomebridgeMessenger",
+        "name": "Messenger",
+        "services": {
+            "ifttt": {
+                "key": "your_key"
+            },
+        },
+        "messages": [
+            {
+                "type": "ifttt",
+                "name": "Test IFTTT",
+                "event": "my_webhook",
+                "value1": "hello world",
+                "value2": "foo bar",
+                "value3": "chewbacca"
+            }        
+        ]
+    }
+]
+```
+* Service properties : 
+    * key *(required)*: Your key. To obtain your key, log into your IFTTT account and click on the Documentation link in the [Webhooks service](https://ifttt.com/maker_webhooks).
+* Message properties :
+    * type *(required)*: Must be `ifttt`.
+    * name *(required)*: Name of the switch. This will be **not** passed to IFTTT.
+    * event *(required)*: Name of your event configured in IFTTT (Webhooks service).
+    * value1 *(facultative)*: Value 1 to be passed to IFTTT.
+    * value2 *(facultative)*: Value 2 to be passed to IFTTT.
+    * value3 *(facultative)*: Value 3 to be passed to IFTTT.
+    
 ### Email
 ```
 "accessories": [
@@ -140,40 +174,7 @@ All switches can be used in scenes and automation.
     * name *(required)*: Name of the switch and subject of your email.
     * text *(required)*: Body of the email.
 
-
-### IFTTT (Webhooks service)
-```
-"accessories": [
-    {
-        "accessory": "HomebridgeMessenger",
-        "name": "Messenger",
-        "services": {
-            "ifttt": {
-                "key": "your_key"
-            },
-        },
-        "messages": [
-            {
-                "type": "ifttt",
-                "name": "Test IFTTT",
-                "event": "my_webhook",
-                "value1": "hello world",
-                "value2": "foo bar",
-                "value3": "chewbacca"
-            }        
-        ]
-    }
-]
-```
-* Service properties : 
-    * key *(required)*: Your key. To obtain your key, log into your IFTTT account and click on the Documentation link in the [Webhooks service](https://ifttt.com/maker_webhooks).
-* Message properties :
-    * type *(required)*: Must be `ifttt`.
-    * name *(required)*: Name of the switch. This will be **not** passed to IFTTT.
-    * event *(required)*: Name of your event configured in IFTTT (Webhooks service).
-    * value1 *(facultative)*: Value 1 to be passed to IFTTT.
-    * value2 *(facultative)*: Value 2 to be passed to IFTTT.
-    * value3 *(facultative)*: Value 3 to be passed to IFTTT.
+    
     
 ### Advanced configuration
 An example featuring **all technologies** is available [here](configuration-examples/advanced.example.json).
