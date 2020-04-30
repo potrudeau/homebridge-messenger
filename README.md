@@ -20,8 +20,9 @@
 ## Features
 The plugin supports the following technologies:
 * [Pushover](https://pushover.net/)
-* [SMTP email](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
 * [IFTTT](https://ifttt.com) ([Webhooks](https://ifttt.com/maker_webhooks) service)
+* [SMTP email](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
+
 
 ## Installation
 
