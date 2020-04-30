@@ -120,6 +120,13 @@
                         "ifttt"
                       ]
                     }  
+                    ,
+                    {
+                      "title": "Pushcut",
+                      "enum": [
+                        "pushcut"
+                      ]
+                    } 
                   ]
                 },
                 "text": {
@@ -479,67 +486,62 @@
                     "flex-wrap": "wrap",
                     "items": [
                         {
-                            "type": "help",
-                            "helpvalue": "<b>General settings</b><br><em class='primary-text'>These settings are required for all types of messages.</em>",
-                            "flex-basis": "100%"
+                          "key": "messages[].type",
+                          "flex-basis": "100%"
                         },
                         {
                             "key": "messages[].name",
-                            "flex-basis": "50%"
-                        },
-                        {
-                            "key": "messages[].type",
-                            "flex-basis": "50%"
+                            "flex-basis": "100%"
                         },
                         {
                             "key": "messages[].text",
-                            "flex-basis": "100%"
-                        },
-                        {
-                            "type": "help",
-                            "helpvalue": "<b>Pushover settings</b><br><em class='primary-text'>These settings only relate to Pushover messages.</em>",
-                            "flex-basis": "100%"
+                            "flex-basis": "100%",
+                            "condition" : "messages[arrayIndex].type!=ifttt"
                         },
                         {
                             "key": "messages[].priority",
-                            "flex-basis": "50%"
+                            "flex-basis": "50%",
+                            "condition" : "messages[arrayIndex].type==pushover"
                         },
                         {
                             "key": "messages[].sound",
-                            "flex-basis": "50%"
+                            "flex-basis": "50%",
+                            "condition" : "messages[arrayIndex].type==pushover"
                         },
                         {
                             "key": "messages[].device",
-                            "flex-basis": "100%"
+                            "flex-basis": "100%",
+                            "condition" : "messages[arrayIndex].type==pushover"
                         },
                         {
                           "key": "messages[].url",
-                          "flex-basis": "50%"
+                          "flex-basis": "50%",
+                          "condition" : "messages[arrayIndex].type==pushover"
                         },
                         {
                           "key": "messages[].urltitle",
-                          "flex-basis": "50%"
-                        },
-                        {
-                          "type": "help",
-                          "helpvalue": "<b>IFTTT settings</b><br><em class='primary-text'>These settings only relate to IFTTT messages.</em>",
-                          "flex-basis": "100%"
+                          "flex-basis": "50%",
+                          "condition" : "messages[arrayIndex].type==pushover"
                         },
                         {
                           "key": "messages[].event",
-                          "flex-basis": "100%"
+                          "flex-basis": "100%",
+                          "condition" : "messages[arrayIndex].type==ifttt"
                         },
                         {
                           "key": "messages[].value1",
-                          "flex-basis": "33%%"
+                          "flex-basis": "33%%",
+                          "condition" : "messages[arrayIndex].type==ifttt"
                         },
                         {
                           "key": "messages[].value2",
-                          "flex-basis": "33%"
+                          "flex-basis": "33%",
+                          "condition" : "messages[arrayIndex].type==ifttt"
                         },
                         {
                           "key": "messages[].value3",
-                          "flex-basis": "33%"
+                          "flex-basis": "33%",
+                          "condition" : "messages[arrayIndex].type==ifttt"
                         }
                     ]
                 }
