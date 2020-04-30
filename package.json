@@ -1,6 +1,6 @@
 {
   "name": "homebridge-messenger",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Send HomeKit messages with HomeBridge (Pushover / IFTTT / Email)",
   "author": "Paul-Olivier Trudeau (p-o.ca)",
   "license": "MIT",
@@ -35,6 +35,7 @@
     "nodemailer": "^6.4.6",
     "pushover-notifications": "^0.2.4",
     "node-persist": "^2.1.0",
-    "ifttt-webhooks-channel": "^1.1.2"
+    "ifttt-webhooks-channel": "^1.1.2",
+    "axios": "^0.19.2"
   }
 }

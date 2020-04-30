@@ -3,6 +3,7 @@
 var PushOverMessenger = require('./lib/pushover.js')
 var EmailMessenger = require('./lib/email.js')
 var IftttMessenger = require('./lib/ifttt.js')
+var PushcutMessenger = require('./lib/pushcut.js')
 
 let Service, Characteristic, HomebridgeAPI
 
@@ -62,6 +63,7 @@ class HomebridgeMessenger {
           if (this.isOn) { // If main switch status if On
             var message;
             switch(this.messages[x].type.toLowerCase()) {
+
               // Message type is email
               case "email": 
                 message = new EmailMessenger(this.config.services.email.recipient, 
@@ -73,6 +75,7 @@ class HomebridgeMessenger {
                   this.messages[x].name,
                   this.messages[x].text)
                 break;
+
               // Message type is pushover
               case "pushover":
                 message = new PushOverMessenger(this.config.services.pushover.user, 
@@ -85,17 +88,29 @@ class HomebridgeMessenger {
                   this.messages[x].url,
                   this.messages[x].urltitle)
                 break;
-              // Message type is pushover
+
+              // Message type is ifttt
               case "ifttt":
                 message = new IftttMessenger(this.config.services.ifttt.key,
                   this.messages[x].event,
                   this.messages[x].value1,
                   this.messages[x].value2,
                   this.messages[x].value3)
-                break;                
+                break;  
+
+              // Message type is pushcut
+              case "pushcut":
+                  message = new PushcutMessenger(this.config.services.pushcut.apikey,
+                  this.messages[x].notification,
+                  this.messages[x].title,
+                  this.messages[x].text,
+                  this.messages[x].input,
+                  this.messages[x].actions)
+                  break;       
+                          
               // Invalid message type
               default:
-                throw new Error(this.messages[x].name  + " : Invalid type value. Only Pushover and Email are accepted.");
+                throw new Error(this.messages[x].name  + " : Invalid type value.");
                 break;
             }
 
