@@ -1,8 +1,8 @@
 <p align="center">
     <img src="https://user-images.githubusercontent.com/1062160/79011991-45a1c680-7b33-11ea-9e34-ec5e9005f623.png" height="120"><br>
     <img src="https://user-images.githubusercontent.com/1062160/79012099-7da90980-7b33-11ea-99a3-c69c322e875e.png" hspace="10px">
-    <img src="https://user-images.githubusercontent.com/1062160/79012203-c06ae180-7b33-11ea-81c3-ab43290011db.png" hspace="10px">  
     <img src="https://user-images.githubusercontent.com/1062160/80269083-a9230c80-867a-11ea-9bee-74dd68aa1bd0.png" hspace="10px" height="48px">  
+   <img src="https://user-images.githubusercontent.com/1062160/79012203-c06ae180-7b33-11ea-81c3-ab43290011db.png" hspace="10px">  
 </p>
 
 
@@ -20,8 +20,9 @@
 ## Features
 The plugin supports the following technologies:
 * [Pushover](https://pushover.net/)
-* [SMTP email](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
 * [IFTTT](https://ifttt.com) ([Webhooks](https://ifttt.com/maker_webhooks) service)
+* [SMTP email](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
+
 
 ## Installation
 
@@ -101,6 +102,40 @@ All switches can be used in scenes and automation.
         * Retry : 60 seconds
         * Expires: 3600 seconds
     
+### IFTTT (Webhooks service)
+```
+"accessories": [
+    {
+        "accessory": "HomebridgeMessenger",
+        "name": "Messenger",
+        "services": {
+            "ifttt": {
+                "key": "your_key"
+            },
+        },
+        "messages": [
+            {
+                "type": "ifttt",
+                "name": "Test IFTTT",
+                "event": "my_webhook",
+                "value1": "hello world",
+                "value2": "foo bar",
+                "value3": "chewbacca"
+            }        
+        ]
+    }
+]
+```
+* Service properties : 
+    * key *(required)*: Your key. To obtain your key, log into your IFTTT account and click on the Documentation link in the [Webhooks service](https://ifttt.com/maker_webhooks).
+* Message properties :
+    * type *(required)*: Must be `ifttt`.
+    * name *(required)*: Name of the switch. This will be **not** passed to IFTTT.
+    * event *(required)*: Name of your event configured in IFTTT (Webhooks service).
+    * value1 *(facultative)*: Value 1 to be passed to IFTTT.
+    * value2 *(facultative)*: Value 2 to be passed to IFTTT.
+    * value3 *(facultative)*: Value 3 to be passed to IFTTT.
+    
 ### Email
 ```
 "accessories": [
@@ -139,40 +174,7 @@ All switches can be used in scenes and automation.
     * name *(required)*: Name of the switch and subject of your email.
     * text *(required)*: Body of the email.
 
-
-### IFTTT (Webhooks service)
-```
-"accessories": [
-    {
-        "accessory": "HomebridgeMessenger",
-        "name": "Messenger",
-        "services": {
-            "ifttt": {
-                "key": "your_key"
-            },
-        },
-        "messages": [
-            {
-                "type": "ifttt",
-                "name": "Test IFTTT",
-                "event": "my_webhook",
-                "value1": "hello world",
-                "value2": "foo bar",
-                "value3": "chewbacca"
-            }        
-        ]
-    }
-]
-```
-* Service properties : 
-    * key *(required)*: Your key. To obtain your key, log into your IFTTT account and click on the Documentation link in the [Webhooks service](https://ifttt.com/maker_webhooks).
-* Message properties :
-    * type *(required)*: Must be `ifttt`.
-    * name *(required)*: Name of the switch. This will be **not** passed to IFTTT.
-    * event *(required)*: Name of your event configured in IFTTT (Webhooks service).
-    * value1 *(facultative)*: Value 1 to be passed to IFTTT.
-    * value2 *(facultative)*: Value 2 to be passed to IFTTT.
-    * value3 *(facultative)*: Value 3 to be passed to IFTTT.
+    
     
 ### Advanced configuration
 An example featuring **all technologies** is available [here](configuration-examples/advanced.example.json).
@@ -186,8 +188,8 @@ Available [here](CHANGELOG.md)
 
 ## Credits
 * [qbit/node-pushover](https://github.com/qbit/node-pushover) - library to send Pushover messages
-* [nodemailer](https://github.com/nodemailer/nodemailer) - library to send SMTP emails
 * [jeroentvb/IFTTT-webhooks-channel](https://github.com/jeroentvb/IFTTT-webhooks-channel) - library to send IFTTT messages
+* [nodemailer](https://github.com/nodemailer/nodemailer) - library to send SMTP emails
 
 ## License
 The [homebridge-messenger](https://github.com/potrudeau/homebridge-messenger) plugin is released under the [MIT license](LICENSE).
