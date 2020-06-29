@@ -41,7 +41,7 @@ The plugin adds to HomeKit a main switch and switches for each configured messag
 
 The accessory **name** is used to specify the name of the main switch. If this main switch if turned OFF, no message will be sent by the plugin.
 
-Message switches are stateful: they are turned OFF after being turned ON, once the message is sent.
+Message switches are stateless: they are turned OFF after being turned ON, once the message is sent.
 
 There are two levels of configuration:
 * **Service** level properties defines the parameters for a specific technology. All messages related to that technology will be using the same properties for all messages. 
