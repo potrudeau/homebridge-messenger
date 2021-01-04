@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.0.7 (2021-01-04)
+
+### Bug fixes
+* Fix problem with secure emails crashing plugin. ([#15](https://github.com/potrudeau/homebridge-messenger/issues/15))
+
+### Features
+
+* **Email messages :** Added support for alternate email override. ([#14](https://github.com/potrudeau/homebridge-messenger/issues/14))
+* **Email messages :** Added support for multiple email recipients (in alternate email). ([#13](https://github.com/potrudeau/homebridge-messenger/issues/13))
+
 ## 0.0.6 (2020-04-26)
 
 ### Bug fixes

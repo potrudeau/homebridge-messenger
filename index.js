@@ -73,7 +73,8 @@ class HomebridgeMessenger {
                   this.config.services.email.smtpUsername, 
                   this.config.services.email.smtpPassword, 
                   this.messages[x].name,
-                  this.messages[x].text)
+                  this.messages[x].text, 
+                  this.messages[x].recipients)
                 break;
 
               // Message type is pushover
@@ -113,11 +114,11 @@ class HomebridgeMessenger {
                 throw new Error(this.messages[x].name  + " : Invalid type value.");
                 break;
             }
-
+            
             this.log(this.messages[x].name  + " : Message sent to " + message.getRecipient())
             message.sendMessage() 
           } else { // If main switch status if Off
-            this.log(this.messages[x].name + " : Message not sent. Master switch is off.")
+            this.log(this.ßmessages[x].name + " : Message not sent. Master switch is off.")
           }
 
           // Configure message switch to be stateless : will be turned off after 100 ms.
@@ -132,6 +133,7 @@ class HomebridgeMessenger {
       // Add message switch to array. Array will be loaded in getServices()
       this.serviceMessagesSwitches.push(serviceMessageSwitch);
     }
+  
   }
 
 

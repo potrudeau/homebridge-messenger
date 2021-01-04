@@ -1,551 +1,555 @@
 {
-    "pluginAlias": "HomebridgeMessenger",
-    "pluginType": "accessory",
-    "singular": false,
-    "headerDisplay": "Homebridge plugin which allow users to send messages from HomeKit",
-    "footerDisplay": "For more details on this plugin, see: https://github.com/potrudeau/homebridge-messenger",  
-    "schema": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "default": "Messenger",
-          "required": true
-        },
-        "services": {
-            "title": "",
+  "pluginAlias": "HomebridgeMessenger",
+  "pluginType": "accessory",
+  "singular": false,
+  "headerDisplay": "Homebridge plugin which allow users to send messages from HomeKit",
+  "footerDisplay": "For more details on this plugin, see: https://github.com/potrudeau/homebridge-messenger",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "Messenger",
+        "required": true
+      },
+      "services": {
+        "title": "",
+        "type": "object",
+        "properties": {
+          "pushover": {
+            "title": "Pushover",
             "type": "object",
             "properties": {
-                "pushover": {
-                    "title": "Pushover",
-                    "type": "object",
-                    "properties": {
-                        "user": {
-                            "title": "User",
-                            "type": "string",
-                            "required": true
-                        },
-                        "token": {
-                            "title": "Token",
-                            "type": "string",
-                            "required": true
-                        }
-                    }
-                },
-                "ifttt": {
+              "user": {
+                "title": "User",
+                "type": "string",
+                "required": true
+              },
+              "token": {
+                "title": "Token",
+                "type": "string",
+                "required": true
+              }
+            }
+          },
+          "ifttt": {
+            "title": "Pushover",
+            "type": "object",
+            "properties": {
+              "key": {
+                "title": "Key",
+                "type": "string",
+                "required": true
+              }
+            }
+          },
+          "email": {
+            "title": "Email",
+            "type": "object",
+            "properties": {
+              "recipient": {
+                "title": "Recipient",
+                "type": "string",
+                "required": true,
+                "format": "email"
+              },
+              "smtpServer": {
+                "title": "SMTP Server",
+                "type": "string",
+                "required": true,
+                "format": "hostname"
+              },
+              "smtpPort": {
+                "title": "SMTP Port",
+                "type": "integer",
+                "default": 8080,
+                "maximum": 65535,
+                "required": true
+              },
+              "smtpSecure": {
+                "title": "Secure",
+                "type": "boolean"
+              },
+              "smtpUsername": {
+                "title": "SMTP Username",
+                "type": "string"
+              },
+              "smtpPassword": {
+                "title": "SMTP Password",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "messages": {
+        "title": "Messages",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string",
+              "default": "",
+              "required": true
+            },
+            "type": {
+              "title": "Type",
+              "type": "string",
+              "default": "pushover",
+              "required": true,
+              "oneOf": [
+                {
                   "title": "Pushover",
-                  "type": "object",
-                  "properties": {
-                      "key": {
-                          "title": "Key",
-                          "type": "string",
-                          "required": true
-                      }
-                  }
-                },
-                "email": {
-                    "title": "Email",
-                    "type": "object",
-                    "properties": {
-                        "recipient": {
-                            "title": "Recipient",
-                            "type": "string",
-                            "required": true,
-                            "format": "email"
-                        },
-                        "smtpServer": {
-                            "title": "SMTP Server",
-                            "type": "string",
-                            "required": true,
-                            "format": "hostname"
-                        },
-                        "smtpPort": {
-                            "title": "SMTP Port",
-                            "type": "integer",
-                            "default": 8080,
-                            "maximum": 65535,
-                            "required": true
-                        },
-                        "smtpSecure": {
-                            "title": "Secure",
-                            "type": "boolean"
-                        },  
-                        "smtpUsername": {
-                            "title": "SMTP Username",
-                            "type": "string"
-                        },
-                        "smtpPassword": {
-                            "title": "SMTP Password",
-                            "type": "string"
-                        }  
-                    }
-                }
-            }
-        }
-        ,
-        "messages": {
-            "title": "Messages",
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "title": "Name",
-                  "type": "string",
-                  "default": "",
-                  "required": true
-                },
-                "type": {
-                  "title": "Type",
-                  "type": "string",
-                  "default": "pushover",
-                  "required": true,
-                  "oneOf": [
-                    {
-                      "title": "Pushover",
-                      "enum": [
-                        "pushover"
-                      ]
-                    },
-                    {
-                      "title": "Email",
-                      "enum": [
-                        "email"
-                      ]
-                    },
-                    {
-                      "title": "IFTTT",
-                      "enum": [
-                        "ifttt"
-                      ]
-                    }  
-                    ,
-                    {
-                      "title": "Pushcut",
-                      "enum": [
-                        "pushcut"
-                      ]
-                    } 
+                  "enum": [
+                    "pushover"
                   ]
                 },
-                "text": {
-                    "title": "Text",
-                    "type": "string",
-                    "default": "",
-                    "required": true
-                  },
-                  "event": {
-                    "title": "Event",
-                    "type": "string",
-                    "default": "",
-                    "required": true
-                  },
-                  "value1": {
-                    "title": "Value 1",
-                    "type": "string",
-                    "default": "",
-                    "required": true
-                  },
-                  "value2": {
-                    "title": "Value 2",
-                    "type": "string",
-                    "default": "",
-                    "required": true
-                  },
-                  "value3": {
-                    "title": "Value 3",
-                    "type": "string",
-                    "default": "",
-                    "required": true
-                  },
-                  "device": {
-                    "title": "Device",
-                    "type": "string",
-                    "default": "",
-                    "required": false
-                  },
-                  "priority": {
-                    "title": "Priority",
-                    "type": "integer",
-                    "default": 0,
-                    "oneOf": [
-                        {
-                          "title": "Lowest Priority (-2)",
-                          "enum": [
-                            -2
-                          ]
-                        },
-                        {
-                          "title": "Low Priority (-1)",
-                          "enum": [
-                            -1
-                          ]
-                        },
-                        {
-                            "title": "Normal Priority (0)",
-                            "enum": [
-                              0
-                            ]
-                          },
-                          {
-                            "title": "High Priority (1)",
-                            "enum": [
-                              1
-                            ]
-                          },
-                          {
-                            "title": "Emergency Priority (2)",
-                            "enum": [
-                              2
-                            ]
-                          }
-                      ]
-                  },
-                  "sound": {
-                    "title": "Sound",
-                    "type": "string",
-                    "default": "pushover",
-                    "oneOf": [
-                        {
-                          "title": "pushover",
-                          "enum": [
-                            "pushover"
-                          ]
-                        },
-                        {
-                            "title": "bike",
-                            "enum": [
-                              "bike"
-                            ]
-                          },
-                          {
-                            "title": "bugle",
-                            "enum": [
-                              "bugle"
-                            ]
-                          },
-                          {
-                            "title": "cashregister",
-                            "enum": [
-                              "cashregister"
-                            ]
-                          },
-                          {
-                            "title": "classical",
-                            "enum": [
-                              "classical"
-                            ]
-                          },
-                          {
-                            "title": "cosmic",
-                            "enum": [
-                              "cosmic"
-                            ]
-                          },
-                          {
-                            "title": "falling",
-                            "enum": [
-                              "falling"
-                            ]
-                          },
-                          {
-                            "title": "gamelan",
-                            "enum": [
-                              "gamelan"
-                            ]
-                          },
-                          {
-                            "title": "incoming",
-                            "enum": [
-                              "incoming"
-                            ]
-                          },
-                          {
-                            "title": "intermission",
-                            "enum": [
-                              "intermission"
-                            ]
-                          },
-                          {
-                            "title": "magic",
-                            "enum": [
-                              "magic"
-                            ]
-                          },
-                          {
-                            "title": "mechanical",
-                            "enum": [
-                              "mechanical"
-                            ]
-                          },
-                          {
-                            "title": "pianobar",
-                            "enum": [
-                              "pianobar"
-                            ]
-                          },
-                          {
-                            "title": "siren",
-                            "enum": [
-                              "siren"
-                            ]
-                          },
-                          {
-                            "title": "spacealarm",
-                            "enum": [
-                              "spacealarm"
-                            ]
-                          },
-                          {
-                            "title": "tugboat",
-                            "enum": [
-                              "tugboat"
-                            ]
-                          },
-                          {
-                            "title": "alien",
-                            "enum": [
-                              "alien"
-                            ]
-                          },
-                          {
-                            "title": "climb",
-                            "enum": [
-                              "climb"
-                            ]
-                          },
-                          {
-                            "title": "persistent",
-                            "enum": [
-                              "persistent"
-                            ]
-                          },
-                          {
-                            "title": "echo",
-                            "enum": [
-                              "echo"
-                            ]
-                          },
-                          {
-                            "title": "updown",
-                            "enum": [
-                              "updown"
-                            ]
-                          },
-                          {
-                            "title": "vibrate",
-                            "enum": [
-                              "vibrate"
-                            ]
-                          },
-                          {
-                            "title": "none",
-                            "enum": [
-                              "none"
-                            ]
-                          }
-                      ]
-                  },
-                  "url": {
-                    "title": "Url",
-                    "type": "string",
-                    "default": "",
-                    "required": false,
-                    "format": "hostname"
-                  },
-                  "urltitle": {
-                    "title": "Url Title",
-                    "type": "string",
-                    "default": "",
-                    "required": false
-                  }              
-              }
+                {
+                  "title": "Email",
+                  "enum": [
+                    "email"
+                  ]
+                },
+                {
+                  "title": "IFTTT",
+                  "enum": [
+                    "ifttt"
+                  ]
+                }
+              ]
+            },
+            "text": {
+              "title": "Text",
+              "type": "string",
+              "default": "",
+              "required": true
+            },
+            "event": {
+              "title": "Event",
+              "type": "string",
+              "default": "",
+              "required": true
+            },
+            "value1": {
+              "title": "Value 1",
+              "type": "string",
+              "default": "",
+              "required": true
+            },
+            "value2": {
+              "title": "Value 2",
+              "type": "string",
+              "default": "",
+              "required": true
+            },
+            "value3": {
+              "title": "Value 3",
+              "type": "string",
+              "default": "",
+              "required": true
+            },
+            "recipients": {
+              "title": "Recipients",
+              "type": "string",
+              "default": "",              
+              "required": false
+            },
+            "device": {
+              "title": "Device",
+              "type": "string",
+              "default": "",
+              "required": false
+            },
+            "priority": {
+              "title": "Priority",
+              "type": "integer",
+              "default": 0,
+              "required": true,
+              "oneOf": [
+                {
+                  "title": "Lowest Priority (-2)",
+                  "enum": [
+                    -2
+                  ]
+                },
+                {
+                  "title": "Low Priority (-1)",
+                  "enum": [
+                    -1
+                  ]
+                },
+                {
+                  "title": "Normal Priority (0)",
+                  "enum": [
+                    0
+                  ]
+                },
+                {
+                  "title": "High Priority (1)",
+                  "enum": [
+                    1
+                  ]
+                },
+                {
+                  "title": "Emergency Priority (2)",
+                  "enum": [
+                    2
+                  ]
+                }
+              ]
+            },
+            "sound": {
+              "title": "Sound",
+              "type": "string",
+              "default": "pushover",
+              "oneOf": [
+                {
+                  "title": "pushover",
+                  "enum": [
+                    "pushover"
+                  ]
+                },
+                {
+                  "title": "bike",
+                  "enum": [
+                    "bike"
+                  ]
+                },
+                {
+                  "title": "bugle",
+                  "enum": [
+                    "bugle"
+                  ]
+                },
+                {
+                  "title": "cashregister",
+                  "enum": [
+                    "cashregister"
+                  ]
+                },
+                {
+                  "title": "classical",
+                  "enum": [
+                    "classical"
+                  ]
+                },
+                {
+                  "title": "cosmic",
+                  "enum": [
+                    "cosmic"
+                  ]
+                },
+                {
+                  "title": "falling",
+                  "enum": [
+                    "falling"
+                  ]
+                },
+                {
+                  "title": "gamelan",
+                  "enum": [
+                    "gamelan"
+                  ]
+                },
+                {
+                  "title": "incoming",
+                  "enum": [
+                    "incoming"
+                  ]
+                },
+                {
+                  "title": "intermission",
+                  "enum": [
+                    "intermission"
+                  ]
+                },
+                {
+                  "title": "magic",
+                  "enum": [
+                    "magic"
+                  ]
+                },
+                {
+                  "title": "mechanical",
+                  "enum": [
+                    "mechanical"
+                  ]
+                },
+                {
+                  "title": "pianobar",
+                  "enum": [
+                    "pianobar"
+                  ]
+                },
+                {
+                  "title": "siren",
+                  "enum": [
+                    "siren"
+                  ]
+                },
+                {
+                  "title": "spacealarm",
+                  "enum": [
+                    "spacealarm"
+                  ]
+                },
+                {
+                  "title": "tugboat",
+                  "enum": [
+                    "tugboat"
+                  ]
+                },
+                {
+                  "title": "alien",
+                  "enum": [
+                    "alien"
+                  ]
+                },
+                {
+                  "title": "climb",
+                  "enum": [
+                    "climb"
+                  ]
+                },
+                {
+                  "title": "persistent",
+                  "enum": [
+                    "persistent"
+                  ]
+                },
+                {
+                  "title": "echo",
+                  "enum": [
+                    "echo"
+                  ]
+                },
+                {
+                  "title": "updown",
+                  "enum": [
+                    "updown"
+                  ]
+                },
+                {
+                  "title": "vibrate",
+                  "enum": [
+                    "vibrate"
+                  ]
+                },
+                {
+                  "title": "none",
+                  "enum": [
+                    "none"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "title": "Url",
+              "type": "string",
+              "default": "",
+              "required": false,
+              "format": "hostname"
+            },
+            "urltitle": {
+              "title": "Url Title",
+              "type": "string",
+              "default": "",
+              "required": false
             }
-        }  
-             
+          }
+        }
       }
-    },
-    "layout": [
+    }
+  },
+  "layout": [
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "expanded": true,
+      "title": "Main Switch Settings",
+      "items": [
         {
-            "type": "fieldset",
-            "expandable": true,
-            "expanded" : true,
-            "title": "Main Switch Settings",
-            "items": [
-                {
-                    "type": "div",
-                    "notitle": true,
-                    "displayFlex": true,
-                    "flex-direction": "row",
-                    "flex-wrap": "wrap",
-                    "items": [
-                        {
-                            "key": "name",
-                            "flex-basis": "100%"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "fieldset",
-            "expandable": true,
-            "title": "Pushover Settings",
-            "items": [
-                {
-                    "type": "div",
-                    "notitle": true,
-                    "displayFlex": true,
-                    "flex-direction": "row",
-                    "flex-wrap": "wrap",
-                    "items": [
-                        {
-                            "key": "services.pushover.user",
-                            "flex-basis": "50%"
-                        },
-                        {
-                            "key": "services.pushover.token",
-                            "flex-basis": "50%"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-          "type": "fieldset",
-          "expandable": true,
-          "title": "IFTTT Settings",
+          "type": "div",
+          "notitle": true,
+          "displayFlex": true,
+          "flex-direction": "row",
+          "flex-wrap": "wrap",
           "items": [
-              {
-                  "type": "div",
-                  "notitle": true,
-                  "displayFlex": true,
-                  "flex-direction": "row",
-                  "flex-wrap": "wrap",
-                  "items": [
-                      {
-                          "key": "services.ifttt.key",
-                          "flex-basis": "50%"
-                      }
-                  ]
-              }
+            {
+              "key": "name",
+              "flex-basis": "100%"
+            }
           ]
-        },
-        {
-            "type": "fieldset",
-            "expandable": true,
-            "title": "Email Settings",
-            "items": [
-                {
-                    "type": "div",
-                    "notitle": true,
-                    "displayFlex": true,
-                    "flex-direction": "row",
-                    "flex-wrap": "wrap",
-                    "items": [
-                        {
-                            "key": "services.email.recipient",
-                            "placeholder": "you@domain.com",
-                            "flex-basis": "50%"
-                        },
-                        {
-                            "key": "services.email.smtpServer",
-                            "flex-basis": "50%"
-                        },
-                        {
-                            "key": "services.email.smtpPort",
-                            "flex-basis": "50%"
-                        },
-                        {
-                            "key": "services.email.smtpSecure",
-                            "flex-basis": "50%"
-                        },
-                        {
-                            "key": "services.email.smtpUsername",
-                            "flex-basis": "50%"
-                        },                        {
-                            "key": "services.email.smtpPassword",
-                            "flex-basis": "50%"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "key": "messages",
-            "type": "array",
-            "expandable": true,
-            "title": "Messages",
-            "items": [
-                {
-                    "type": "div",
-                    "notitle": true,
-                    "displayFlex": true,
-                    "flex-direction": "row",
-                    "flex-wrap": "wrap",
-                    "items": [
-                        {
-                          "key": "messages[].type",
-                          "flex-basis": "100%"
-                        },
-                        {
-                            "key": "messages[].name",
-                            "flex-basis": "100%"
-                        },
-                        {
-                            "key": "messages[].text",
-                            "flex-basis": "100%",
-                            "condition" : "messages[arrayIndex].type!=ifttt"
-                        },
-                        {
-                            "key": "messages[].priority",
-                            "flex-basis": "50%",
-                            "condition" : "messages[arrayIndex].type==pushover"
-                        },
-                        {
-                            "key": "messages[].sound",
-                            "flex-basis": "50%",
-                            "condition" : "messages[arrayIndex].type==pushover"
-                        },
-                        {
-                            "key": "messages[].device",
-                            "flex-basis": "100%",
-                            "condition" : "messages[arrayIndex].type==pushover"
-                        },
-                        {
-                          "key": "messages[].url",
-                          "flex-basis": "50%",
-                          "condition" : "messages[arrayIndex].type==pushover"
-                        },
-                        {
-                          "key": "messages[].urltitle",
-                          "flex-basis": "50%",
-                          "condition" : "messages[arrayIndex].type==pushover"
-                        },
-                        {
-                          "key": "messages[].event",
-                          "flex-basis": "100%",
-                          "condition" : "messages[arrayIndex].type==ifttt"
-                        },
-                        {
-                          "key": "messages[].value1",
-                          "flex-basis": "33%%",
-                          "condition" : "messages[arrayIndex].type==ifttt"
-                        },
-                        {
-                          "key": "messages[].value2",
-                          "flex-basis": "33%",
-                          "condition" : "messages[arrayIndex].type==ifttt"
-                        },
-                        {
-                          "key": "messages[].value3",
-                          "flex-basis": "33%",
-                          "condition" : "messages[arrayIndex].type==ifttt"
-                        }
-                    ]
-                }
-            ]
         }
-    ]
-  }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "Pushover Settings",
+      "items": [
+        {
+          "type": "div",
+          "notitle": true,
+          "displayFlex": true,
+          "flex-direction": "row",
+          "flex-wrap": "wrap",
+          "items": [
+            {
+              "key": "services.pushover.user",
+              "flex-basis": "50%"
+            },
+            {
+              "key": "services.pushover.token",
+              "flex-basis": "50%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "IFTTT Settings",
+      "items": [
+        {
+          "type": "div",
+          "notitle": true,
+          "displayFlex": true,
+          "flex-direction": "row",
+          "flex-wrap": "wrap",
+          "items": [
+            {
+              "key": "services.ifttt.key",
+              "flex-basis": "50%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "Email Settings",
+      "items": [
+        {
+          "type": "div",
+          "notitle": true,
+          "displayFlex": true,
+          "flex-direction": "row",
+          "flex-wrap": "wrap",
+          "items": [
+            {
+              "key": "services.email.recipient",
+              "placeholder": "you@domain.com",
+              "flex-basis": "50%"
+            },
+            {
+              "key": "services.email.smtpServer",
+              "flex-basis": "50%"
+            },
+            {
+              "key": "services.email.smtpPort",
+              "flex-basis": "50%"
+            },
+            {
+              "key": "services.email.smtpSecure",
+              "flex-basis": "50%"
+            },
+            {
+              "key": "services.email.smtpUsername",
+              "flex-basis": "50%"
+            },
+            {
+              "key": "services.email.smtpPassword",
+              "flex-basis": "50%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "messages",
+      "type": "array",
+      "expandable": true,
+      "title": "Messages",
+      "items": [
+        {
+          "type": "div",
+          "notitle": true,
+          "displayFlex": true,
+          "flex-direction": "row",
+          "flex-wrap": "wrap",
+          "items": [
+            {
+              "key": "messages[].type",
+              "flex-basis": "100%"
+            },
+            {
+              "key": "messages[].name",
+              "flex-basis": "100%"
+            },
+            {
+              "key": "messages[].text",
+              "flex-basis": "100%",
+              "condition": "messages[arrayIndex].type!=ifttt"
+            },
+            {
+              "key": "messages[].priority",
+              "flex-basis": "50%",
+              "condition": "messages[arrayIndex].type==pushover"
+            },
+            {
+              "key": "messages[].sound",
+              "flex-basis": "50%",
+              "condition": "messages[arrayIndex].type==pushover"
+            },
+            {
+              "key": "messages[].device",
+              "flex-basis": "100%",
+              "condition": "messages[arrayIndex].type==pushover"
+            },
+            {
+              "key": "messages[].url",
+              "flex-basis": "50%",
+              "condition": "messages[arrayIndex].type==pushover"
+            },
+            {
+              "key": "messages[].urltitle",
+              "flex-basis": "50%",
+              "condition": "messages[arrayIndex].type==pushover"
+            },
+            {
+              "key": "messages[].event",
+              "flex-basis": "100%",
+              "condition": "messages[arrayIndex].type==ifttt"
+            },
+            {
+              "key": "messages[].value1",
+              "flex-basis": "33%%",
+              "condition": "messages[arrayIndex].type==ifttt"
+            },
+            {
+              "key": "messages[].value2",
+              "flex-basis": "33%",
+              "condition": "messages[arrayIndex].type==ifttt"
+            },
+            {
+              "key": "messages[].value3",
+              "flex-basis": "33%",
+              "condition": "messages[arrayIndex].type==ifttt"
+            },
+            {
+              "key": "messages[].recipients",
+              "flex-basis": "100%",
+              "condition": "messages[arrayIndex].type==email"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

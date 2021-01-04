@@ -98,7 +98,7 @@ All switches can be used in scenes and automation.
     * text *(required)*: Body of the message.
     * sound *(facultative)*: Name of the sound that will notify the user. If no valid value is provided, the default `pushover` sound will be used. For no sound, use `silent`. The [Pushover API](https://pushover.net/api#sounds) contains the list of all available sounds.
     * device *(facultative)*: The device name to send the message to. If not specified, the message will be send to all your devices. You can send to multiple devices by using a coma.
-    * priority *(facultative)*: Priority of the message. Accepted values are `-2`, `-1`, `0`, `1` or `2`. You may refer to the [Pushover API](https://pushover.net/api#priority) for more details. Critical messages (`2`), are sent with the following parameters :
+    * priority *(required)*: Priority of the message. Accepted values are `-2`, `-1`, `0`, `1` or `2`. You may refer to the [Pushover API](https://pushover.net/api#priority) for more details. Critical messages (`2`), are sent with the following parameters :
         * Retry : 60 seconds
         * Expires: 3600 seconds
     
@@ -156,14 +156,15 @@ All switches can be used in scenes and automation.
             {
                 "type": "email",
                 "name": "Test email",
-                "text": "This is a test"
+                "text": "This is a test",
+                "recipients": "your_friend@domain.com, other_email@domain.com"
             }        
         ]
     }
 ]
 ```
 * Service properties : 
-    * recipient *(required)*: Email address of the recipient.
+    * recipient *(required)*: Default email address of the recipient.
     * smtpServer *(required)*: Address of the SMTP host.
     * smtpPort *(facultative)*: Port to connect to. (Default value is `25`).
     * smtpSecure *(facultative)*: Set to `true` if SMTP supports TLS. (Default value is `false`).
@@ -173,8 +174,8 @@ All switches can be used in scenes and automation.
     * type *(required)*: Must be `email`.
     * name *(required)*: Name of the switch and subject of your email.
     * text *(required)*: Body of the email.
+    * recipients *(facultative)*: Address of the recipients for this email. Multiple emails can be used, divided by a comma. If empty, the default email address at the service level will be used.
 
-    
     
 ### Advanced configuration
 An example featuring **all technologies** is available [here](configuration-examples/advanced.example.json).

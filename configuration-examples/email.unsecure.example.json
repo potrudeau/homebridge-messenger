@@ -21,7 +21,8 @@
                 {
                     "type": "email",
                     "name": "Test unsecured email",
-                    "text": "This is a test"
+                    "text": "This is a test",
+                    "recipients": "other_email@domain.com"
                 }        
             ]
         }
