@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project uses [Semantic Versioning](https://semver.org/).
 
+## 0.0.8 (2021-01-12)
+
+### Bug fixes
+* Fix problem when a message is send when the master switch is off ([#18](https://github.com/potrudeau/homebridge-messenger/issues/18))
+* Updated some plugin dependencies 
+
 ## 0.0.7 (2021-01-04)
 
 ### Bug fixes
