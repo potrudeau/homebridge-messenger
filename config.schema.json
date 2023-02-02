@@ -204,147 +204,37 @@
             "sound": {
               "title": "Sound",
               "type": "string",
-              "default": "pushover",
-              "oneOf": [
-                {
-                  "title": "pushover",
-                  "enum": [
-                    "pushover"
-                  ]
-                },
-                {
-                  "title": "bike",
-                  "enum": [
-                    "bike"
-                  ]
-                },
-                {
-                  "title": "bugle",
-                  "enum": [
-                    "bugle"
-                  ]
-                },
-                {
-                  "title": "cashregister",
-                  "enum": [
-                    "cashregister"
-                  ]
-                },
-                {
-                  "title": "classical",
-                  "enum": [
-                    "classical"
-                  ]
-                },
-                {
-                  "title": "cosmic",
-                  "enum": [
-                    "cosmic"
-                  ]
-                },
-                {
-                  "title": "falling",
-                  "enum": [
-                    "falling"
-                  ]
-                },
-                {
-                  "title": "gamelan",
-                  "enum": [
-                    "gamelan"
-                  ]
-                },
-                {
-                  "title": "incoming",
-                  "enum": [
-                    "incoming"
-                  ]
-                },
-                {
-                  "title": "intermission",
-                  "enum": [
-                    "intermission"
-                  ]
-                },
-                {
-                  "title": "magic",
-                  "enum": [
-                    "magic"
-                  ]
-                },
-                {
-                  "title": "mechanical",
-                  "enum": [
-                    "mechanical"
-                  ]
-                },
-                {
-                  "title": "pianobar",
-                  "enum": [
-                    "pianobar"
-                  ]
-                },
-                {
-                  "title": "siren",
-                  "enum": [
-                    "siren"
-                  ]
-                },
-                {
-                  "title": "spacealarm",
-                  "enum": [
-                    "spacealarm"
-                  ]
-                },
-                {
-                  "title": "tugboat",
-                  "enum": [
-                    "tugboat"
-                  ]
-                },
-                {
-                  "title": "alien",
-                  "enum": [
-                    "alien"
-                  ]
-                },
-                {
-                  "title": "climb",
-                  "enum": [
-                    "climb"
-                  ]
-                },
-                {
-                  "title": "persistent",
-                  "enum": [
-                    "persistent"
-                  ]
-                },
-                {
-                  "title": "echo",
-                  "enum": [
-                    "echo"
-                  ]
-                },
-                {
-                  "title": "updown",
-                  "enum": [
-                    "updown"
-                  ]
-                },
-                {
-                  "title": "vibrate",
-                  "enum": [
-                    "vibrate"
-                  ]
-                },
-                {
-                  "title": "none",
-                  "enum": [
-                    "none"
-                  ]
-                }
-              ]
+              "default": "",
+              "typeahead": {
+                "source": [
+                  "pushover",
+                  "bike",
+                  "bugle",
+                  "cashregister",
+                  "classical",
+                  "cosmic",
+                  "falling",
+                  "falling",
+                  "falling",
+                  "gamelan",
+                  "incoming",
+                  "intermission",
+                  "magic",
+                  "mechanical",
+                  "pianobar",
+                  "siren",
+                  "spacealarm",
+                  "tugboat",
+                  "alien",
+                  "climb",
+                  "persistent",
+                  "persistent",
+                  "echo",
+                  "updown",
+                  "vibrate",
+                  "none"
+                ]
+              }
             },
             "url": {
               "title": "Url",
