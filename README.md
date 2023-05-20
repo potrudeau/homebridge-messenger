@@ -76,7 +76,8 @@ All switches can be used in scenes and automation.
                   "text": "This is a test",
                   "sound": "pushover",
                   "device" : "iphone",
-                  "priority": 0
+                  "priority": 0,
+                  "ttl": 600
               },
               {
                   "type": "pushover",
@@ -98,6 +99,7 @@ All switches can be used in scenes and automation.
     * text *(required)*: Body of the message.
     * sound *(facultative)*: Name of the sound that will notify the user. If no valid value is provided, the default `pushover` sound will be used. For no sound, use `silent`. The [Pushover API](https://pushover.net/api#sounds) contains the list of all available sounds.
     * device *(facultative)*: The device name to send the message to. If not specified, the message will be send to all your devices. You can send to multiple devices by using a coma.
+    * ttl *(facultative)*: Time To Live = a number of seconds that the message will live, before being deleted automatically. This will be ignored, if priority is `2`. Leave blank or remove key from config or set to `0` for infinite TTL.
     * priority *(required)*: Priority of the message. Accepted values are `-2`, `-1`, `0`, `1` or `2`. You may refer to the [Pushover API](https://pushover.net/api#priority) for more details. Critical messages (`2`), are sent with the following parameters :
         * Retry : 60 seconds
         * Expires: 3600 seconds
