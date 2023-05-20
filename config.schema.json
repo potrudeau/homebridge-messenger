@@ -204,8 +204,8 @@
             "ttl": {
               "title": "TTL",
               "type": "integer",
-              "minimum": 1,
-              "description": "Time To Live: message is deleted on the device/phone x seconds after reception.<br />(1 to 65535 or empty for infinite TTL)",
+              "minimum": 0,
+              "description": "Time To Live: message is deleted on the device/phone x seconds after reception.<br />(0 or empty for infinite TTL)",
               "required": false
             },
             "sound": {
