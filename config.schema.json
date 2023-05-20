@@ -201,6 +201,13 @@
                 }
               ]
             },
+            "ttl": {
+              "title": "TTL",
+              "type": "integer",
+              "minimum": 1,
+              "description": "Time To Live: message is deleted on the device/phone x seconds after reception.<br />(1 to 65535 or empty for infinite TTL)",
+              "required": false
+            },
             "sound": {
               "title": "Sound",
               "type": "string",
@@ -505,6 +512,11 @@
             {
               "key": "messages[].sound",
               "flex-basis": "50%",
+              "condition": "messages[arrayIndex].type==pushover"
+            },
+            {
+              "key": "messages[].ttl",
+              "flex-basis": "100%",
               "condition": "messages[arrayIndex].type==pushover"
             },
             {
