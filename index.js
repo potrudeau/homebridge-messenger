@@ -85,6 +85,7 @@ class HomebridgeMessenger {
                   this.messages[x].text,
                   this.messages[x].priority,
                   this.messages[x].device,
+                  this.messages[x].ttl,
                   this.messages[x].sound,
                   this.messages[x].url,
                   this.messages[x].urltitle)
